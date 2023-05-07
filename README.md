@@ -1,8 +1,34 @@
-# Getting Started with Create React App
+# Worker Demo
 
+## Introduction
+
+The aim of this sample project is to show how workers could be used to implement a typical offline
+application problem.
+
+This kind of problem is very common in mobile apps, desktop apps or even in PWA, in fact whenever you
+want your customer to store data in a persistent way, but you're not very sure whether remote server
+is available or not.
+
+This example tries to be as simple as possible, that means that there is no REDUX involved. Persistency involves
+local IndexedDB (using Dexie as a high-level API) and workers which are responsible for communicating with
+the remote server.
+
+This example only includes frontend code, at the present moment there isn't any backend.
+
+## Structure
+
+This app is structured into three main folders:
+
+* `src/storage`: All logic and local persistence models are implemented in this folder. I've tried to implement a common infrastructure, independent of actual model and data. Using this approach, could allow you to use it in any of your projects.
+* `src/workers`: All logic related to worker support, and a hook intended to make easier how worker could be used from your app
+* `src/app`: Sample APP (very simple indeed) using `storage` and `worker` common logic.
+
+## Testing
+
+Tests are provided for storage and workers code, demo app hasn't got its own tests.
+
+## Available scripts
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
 
 In the project directory, you can run:
 
@@ -39,7 +65,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
