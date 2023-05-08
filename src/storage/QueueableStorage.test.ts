@@ -114,7 +114,7 @@ test('Check addind,updating, deleting user',async ()=>{
     p.name = 'Joanna';
     inLoop = false;
     await storage.updateEntity(p);
-    await storage.deleteUser(p);
+    await storage.deleteEntity(p);
     await storage.processQueue(p=>{
         expect(p.action).toBe(Action.DELETED);
         inLoop = true;
